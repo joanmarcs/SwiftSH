@@ -330,7 +330,7 @@ extension Libssh2 {
                         }
 
                         let password = NSString(string: keyboardInteractiveCallback(prompt as String)).utf8String
-                        let response = LIBSSH2_USERAUTH_KBDINT_RESPONSE(text: strdup(password), length: UInt32(strlen(password)))
+                        let response = LIBSSH2_USERAUTH_KBDINT_RESPONSE(text: strdup(password), length: UInt32(strlen(password!)))
                         
                         responses?[i] = response
                     }
